@@ -30,14 +30,10 @@ Shop = {
 print("Welcome to Slow Way!\n")
 
 while is_Shopping:
-    print(f"Looks like you have a budget of ${user_budget}! What are you looking for today?")
-    #Print Menu + Let User Choose
-
-
-
     while True:
         # --- CHOOSING CATEGORY --- #
         counter = 0
+        print(f"Looks like you have a budget of ${user_budget}! What are you looking for today?")
         for category in Shop:
             counter += 1
             print(f"[{counter}] {category}") # prints [number] "Item Name"
@@ -52,7 +48,6 @@ while is_Shopping:
             print("Try typing that again please!")
 
 
-    
     while True:
         # --- CHOOSING ITEM --- #
         counter = 0
@@ -87,16 +82,6 @@ while is_Shopping:
         else:
             print("Try typing that again please!")
 
-    total += item_price[user_item]
-
-    if user_category == "4":
-        print(" Would you like to scratch you lottery ticket?")
-        choice= input("Type here Yes/No:)")
-        if choice.lower() == "yes":
-            random_number = random.randint(0,500)
-            print(f"Congrats! You won ${random_number}")
-        else:
-            print("Alright!\n")
 
 
     if bought_item == True:
