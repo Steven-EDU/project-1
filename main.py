@@ -5,9 +5,8 @@
 
     
 """
-#  C:\Users\necro\.local\bin\python3.14.exe "d:/Working/VS Code Project Files/Project_1/main.py"
 # Test
-
+import random
 #Setting Variables
 total: float = 0
 is_Shopping = True
@@ -75,12 +74,21 @@ while is_Shopping:
         else:
             print("Try typing that again please!")
 
+    total += item_price[user_item]
 
+    if user_category == "4":
+        print(" Would you like to scratch you lottery ticket?")
+        choice= input("Type here Yes/No:)")
+        if choice.lower() == "yes":
+            random_number = random.randint(0,500)
+            print(f"Congrats! You won ${random_number}")
+        else:
+            print("Alright!\n")
 
 
 
     # Pre-Checkout -- Display total and ask if they desire to shop more
-    total += item_price[user_item]
+
     print("")
     print(f"Your total is ${total:.2f}")
     print("Would you like to purchase something else? (Yes/No)")
@@ -90,6 +98,7 @@ while is_Shopping:
         print(f"Your total is ${total:.2f}")
         print("Thank you for shopping at Slow Way!!\n\n")
         break
+
 print("Complete")
 
 
