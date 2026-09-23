@@ -5,10 +5,7 @@
 
     
 """
-# test
 #  C:\Users\necro\.local\bin\python3.14.exe "d:/Working/VS Code Project Files/Project_1/main.py"
-#Beginning Variables
-#Eventually swap to "dictionaries"
 
 #Setting Variables
 total: float = 0
