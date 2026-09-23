@@ -6,10 +6,13 @@
     
 """
 #  C:\Users\necro\.local\bin\python3.14.exe "d:/Working/VS Code Project Files/Project_1/main.py"
+# Test
 
 #Setting Variables
 total: float = 0
 is_Shopping = True
+is_Choosing = True
+shop_category = 0
 
 # Dictionary price
 Shop = {
@@ -18,56 +21,72 @@ Shop = {
     "Drinks": {"Water": 1.00, "Juice": 1.50, "Soda": 2.15},
     "Lottery_Ticket": {"$10 Ticket": 10.0, "$100 Ticket": 100.0}
 }
+menu = ["[1] Food","[2] Snacks", "[3] Drinks", "[4] Lottery Ticket."]
+
 
 #Code For Entering Shop
 print("Welcome to Slow Way!")
-print("What can i help you with?\n")
 
-#Print Menu + Let User Choose
-menu = ["[1] Food","[2] Snacks", "[3] Drinks", "[4] Lottery Ticket."]
-
-for option in menu :
-    print (option)
-
-user_category = input("type here:")
+while is_Shopping:
+    print("What can i help you with?\n")
+    #Print Menu + Let User Choose
 
 
 
-# Display Items
-if user_category == "1" or user_category == "Food":
-    chosen = Shop.get("Food")
+    while True:
+        for option in menu:
+            print(option)
+        user_category = input("Type the number of the item you want here:")
+        
 
-elif  user_category == "2" or user_category == "Snacks":
-    chosen = Shop.get("Snacks")
+        if user_category == "1":
+            shop_category = Shop.get("Food")
+            break
 
-elif  user_category == "3" or user_category == "Drinks":
-    chosen = Shop.get("Drinks")
+        elif  user_category == "2":
+            shop_category = Shop.get("Snacks")
+            break
 
-elif  user_category == "4" or user_category == "Lottery Ticket":
-    chosen = Shop.get("Lottery Ticket")
-else:
-    print("Try typing that again please!")
+        elif  user_category == "3":
+            shop_category = Shop.get("Drinks")
+            break
+
+        elif  user_category == "4":
+            shop_category = Shop.get("Lottery Ticket")
+            break
+        else:
+            print("Try typing that again please!")
 
 
-# Display category items and prices
-for item in chosen:
-     print(f"${chosen[item]:.2f} for {item}")
+    # Display category ITEMS and PRICES
+    counter = 0
+    while True:
+        for item in shop_category:
+            counter = counter + 1
+            print(f"[{counter}] ${shop_category[item]:.2f} for {item}")
+        user_item = int(input("Type the number of the item you want here: "))
+        
+        if user_item > 0 and user_item <= 4:
+            item_price = list(shop_category.values())   # 12.3 dict.values
+            user_item -= 1
+            break
+        else:
+            print("Try typing that again please!")
 
 
-text : str = input()
-if text in Shop:
-    print(f"We do have that item! It's ${Shop[text]:.2f}")
-else:
-    print("We don't have it")
 
-print("Would you like to purchase something else?")
 
-user_input2 = input("type here:")
-if user_input2 == "yes" or user_input2 == "Yes":
-    print(total)
-else:
-    print("What else would you like to purchase?")
 
+    # Pre-Checkout -- Display total and ask if they desire to shop more
+    total += item_price[user_item]
+    print(f"Your total is ${total:.2f}")
+    print("Would you like to purchase something else? (Yes/No)")
+    user_input2 = input("type here: ")
+    if user_input2 == "no" or user_input2 == "No":
+        print(f"Your total is ${total:.2f}")
+        break
+
+print("Complete")
 
 
 
