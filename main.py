@@ -25,10 +25,10 @@ menu = ["[1] Food","[2] Snacks", "[3] Drinks", "[4] Lottery Ticket."]
 
 
 #Code For Entering Shop
-print("Welcome to Slow Way!")
+print("Welcome to Slow Way!\n")
 
 while is_Shopping:
-    print("What can i help you with?\n")
+    print("What are you looking for today?")
     #Print Menu + Let User Choose
 
 
@@ -52,15 +52,17 @@ while is_Shopping:
             break
 
         elif  user_category == "4":
-            shop_category = Shop.get("Lottery Ticket")
+            shop_category = Shop.get("Lottery_Ticket")
             break
         else:
             print("Try typing that again please!")
 
 
     # Display category ITEMS and PRICES
+    print("")
     counter = 0
     while True:
+        print("What item would you like?")
         for item in shop_category:
             counter = counter + 1
             print(f"[{counter}] ${shop_category[item]:.2f} for {item}")
@@ -79,13 +81,15 @@ while is_Shopping:
 
     # Pre-Checkout -- Display total and ask if they desire to shop more
     total += item_price[user_item]
+    print("")
     print(f"Your total is ${total:.2f}")
     print("Would you like to purchase something else? (Yes/No)")
     user_input2 = input("type here: ")
+    print("")
     if user_input2 == "no" or user_input2 == "No":
         print(f"Your total is ${total:.2f}")
+        print("Thank you for shopping at Slow Way!!\n\n")
         break
-
 print("Complete")
 
 
