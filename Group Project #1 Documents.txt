@@ -1,0 +1,22 @@
+﻿Progress Notes
+09/16/26 - Followed the basic diagram to make a very manual version of the shop, using lists of strings and repeated prints to display items. Most of the code served as a guide to build upon later.
+
+
+Dictionary resource: https://youtu.be/MZZSMaEAC2g?si=IEd881xhWo2Uypsh + Unit 12
+09/22/26 - Learned about dictionaries and incorporated it into the project. Each item was stored in a nested dictionary with its price to keep the scope low. This allowed us to give both the category through one input and a set of if statements. Added logic and “else if” statements to check how many items the user has in the cart and calculates the total.
+
+
+Due to the if statements being extremely long and needing manual prints for each food item, we experimented with the displayment of the items to the user to make this more efficient. The 2nd list of items that show the categories’ items prices hadn’t been fully developed just yet, so we experimented with listing the items without needing a long print statement for each category – which was done through a for loop and a variable named “counter” for the indexes users used to choose the item. The number given by the user is then used to find the item in the dictionary by converting the nested dictionary into a list and using the number as it’s index - 1.
+
+
+Also added a function asking if the user wants to continue shopping, utilizing a loop named “is_shopping” encompassing the entire program, creating the opportunity for infinite purchasing.
+
+
+09/23/26 - Due to feedback from classmates, we added a lottery generator that generates a number when someone purchases and chooses to scratch off a lottery ticket. We also gave the user a $15 budget to spend in total. Scratching off a ticket immediately removes the cost of the ticket from the budget, then adds the winnings to the users budget.
+
+
+Along with this budget, users are made so that they cannot buy items when they do not have the budget for it. To avoid confusion, the budget as the first thing before users start shopping.
+
+
+Enumerate resource: https://realpython.com/python-enumerate/
+Expanded on the receipt to show the items bought, a final total, and the change (aka the users leftover budget. This was when we discovered for loops with “enumerate”, removing the counter variable and using this instead.
