@@ -32,11 +32,9 @@ print("Welcome to Slow Way!\n")
 while is_Shopping:
     while True:
         # --- CHOOSING CATEGORY --- #
-        counter = 0
         print(f"Looks like you have a budget of ${user_budget}! What are you looking for today?")
-        for category in Shop:
-            counter += 1
-            print(f"[{counter}] {category}") # prints [number] "Item Name"
+        for i, category in enumerate(Shop):
+            print(f"[{i + 1}] {category}") # prints [number] "Item Name"
 
         user_category = int(input("Type the number of the item you want here:"))
 
@@ -50,7 +48,6 @@ while is_Shopping:
 
     while True:
         # --- CHOOSING ITEM --- #
-        counter = 0
         bought_item = False
         print("")
 
@@ -58,9 +55,8 @@ while is_Shopping:
         #DISPLAY
         print("What item would you like?")
         print("[0] Go Back")
-        for item in shop_category:
-            counter += 1
-            print(f"[{counter}] ${shop_category[item]:.2f} for {item}") #prints [number] "Item Name" for "Price"
+        for i, item in enumerate(shop_category):
+            print(f"[{i + 1}] ${shop_category[item]:.2f} for {item}") #prints [number] "Item Name" for "Price"
             
         # USER INPUT
         user_item = int(input("Type the number of the item you want here: "))
